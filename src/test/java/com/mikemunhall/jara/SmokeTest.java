@@ -4,20 +4,11 @@ import com.mikemunhall.jara.model.User;
 import com.mikemunhall.jara.service.InvalidUserException;
 import com.mikemunhall.jara.service.ServiceFactory;
 import com.mikemunhall.jara.service.UserService;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.testng.annotations.*;
 
-public class SmokeTest extends TestCase {
+public class SmokeTest {
 
-    public SmokeTest(String testName) {
-        super( testName );
-    }
-
-    public static Test suite() {
-        return new TestSuite( SmokeTest.class );
-    }
-
+    @Test
     public void testApp()
     {
         UserService userService = ServiceFactory.getUserService();
