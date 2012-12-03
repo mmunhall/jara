@@ -2,26 +2,26 @@ package com.mikemunhall.jara.model;
 
 public class Direction {
 
-    private long id;
-    private long recipeId;
+    private String id;
+    private String recipeId;
     private int index;
     private String step;
 
     public Direction() { }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public long getRecipeId() {
+    public String getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(long recipeId) {
+    public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
     }
 

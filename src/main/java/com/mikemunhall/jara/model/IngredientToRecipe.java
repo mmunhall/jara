@@ -2,8 +2,8 @@ package com.mikemunhall.jara.model;
 
 public class IngredientToRecipe {
 
-    private long id;
-    private long recipeId;
+    private String id;
+    private String recipeId;
     private int quantity;
     private String unit;
     private Ingredient ingredient;
@@ -11,15 +11,15 @@ public class IngredientToRecipe {
 
     public IngredientToRecipe() { }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public long getRecipeId() {
+    public String getRecipeId() {
         return recipeId;
     }
 
@@ -39,7 +39,7 @@ public class IngredientToRecipe {
         this.unit = unit;
     }
 
-    public void setRecipeId(long recipeId) {
+    public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
     }
 

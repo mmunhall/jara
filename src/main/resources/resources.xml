@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="file:src/main/resources/application.properties" />
+    </bean>
+    <bean name="mongoClient" class="com.mongodb.MongoClient">
+        <constructor-arg value="${dbHost}" />
+        <constructor-arg value="${dbPort}" />
+    </bean>
+    <bean name="jaraDb" factory-bean="mongoClient" factory-method="getDB">
+        <constructor-arg value="${dbName}" />
+    </bean>
+    <bean name="userAdapter" class="com.mikemunhall.jara.adapter.mongodb.UserAdapter" />
+    <bean name="userDao" class="com.mikemunhall.jara.dao.mongodb.UserDao">
+        <constructor-arg ref="jaraDb" />
+        <constructor-arg ref="userAdapter" />
+    </bean>
+    <bean name="userService" class="com.mikemunhall.jara.service.UserService">
+        <constructor-arg ref="userDao" />
+    </bean>
+</beans>

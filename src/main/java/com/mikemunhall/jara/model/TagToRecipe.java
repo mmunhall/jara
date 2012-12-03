@@ -2,33 +2,33 @@ package com.mikemunhall.jara.model;
 
 public class TagToRecipe {
 
-    private long id;
-    private long recipeId;
-    private long tagId;
+    private String id;
+    private String recipeId;
+    private String tagId;
 
     public TagToRecipe() { }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public long getRecipeId() {
+    public String getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(long recipeId) {
+    public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
     }
 
-    public long getTagId() {
+    public String getTagId() {
         return tagId;
     }
 
-    public void setTagId(long tagId) {
+    public void setTagId(String tagId) {
         this.tagId = tagId;
     }
 }
