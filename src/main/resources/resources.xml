@@ -11,7 +11,7 @@
     <bean name="jaraDb" factory-bean="mongoClient" factory-method="getDB">
         <constructor-arg value="${dbName}" />
     </bean>
-    <bean name="userAdapter" class="com.mikemunhall.jara.adpater.mongodb.UserAdapterTest" />
+    <bean name="userAdapter" class="com.mikemunhall.jara.adapter.mongodb.UserAdapter" />
     <bean name="userDao" class="com.mikemunhall.jara.dao.mongodb.UserDao">
         <constructor-arg ref="jaraDb" />
         <constructor-arg ref="userAdapter" />
