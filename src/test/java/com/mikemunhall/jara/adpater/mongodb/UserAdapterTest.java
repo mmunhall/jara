@@ -7,11 +7,6 @@ import com.mongodb.BasicDBObjectBuilder;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
 import org.testng.annotations.*;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-
 import static org.testng.AssertJUnit.*;
 
 public class UserAdapterTest {
