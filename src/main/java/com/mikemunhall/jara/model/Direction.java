@@ -4,8 +4,8 @@ public class Direction {
 
     private String id;
     private String recipeId;
+    private String description;
     private int index;
-    private String step;
 
     public Direction() { }
 
@@ -33,11 +33,11 @@ public class Direction {
         this.index = index;
     }
 
-    public String getStep() {
-        return step;
+    public String getDescription() {
+        return description;
     }
 
-    public void setStep(String step) {
-        this.step = step;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

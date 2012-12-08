@@ -1,6 +1,8 @@
 package com.mikemunhall.jara.model;
 
 import org.joda.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Recipe {
 
@@ -12,11 +14,21 @@ public class Recipe {
     private Duration totalPrepTime;
     private Duration totalCookTime;
     private Duration totalActiveTime;
-    private TagToRecipe[] tags;
-    private IngredientToRecipe[] ingredients;
-    private Direction[] directions;
+    private List<Tag> tags;
+    private List<Ingredient> ingredients;
+    private List<Direction> directions;
 
-    public Recipe() { }
+    public Recipe() {
+        this.recipeName = "My Recipe";
+        this.description = "";
+        this.servings = 4;
+        this.totalPrepTime = new Duration(0);
+        this.totalCookTime = new Duration(0);
+        this.totalActiveTime = new Duration(0);
+        this.tags = new ArrayList<Tag>();
+        this.ingredients = new ArrayList<Ingredient>();
+        this.directions = new ArrayList<Direction>();
+    }
 
     public String getId() {
         return id;
@@ -28,10 +40,6 @@ public class Recipe {
 
     public void setUserId(String userId) {
         this.userId = userId;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getRecipeName() {
@@ -82,27 +90,27 @@ public class Recipe {
         this.totalActiveTime = totalActiveTime;
     }
 
-    public IngredientToRecipe[] getIngredients() {
-        return ingredients;
-    }
-
-    public TagToRecipe[] getTags() {
+    public List<Tag> getTags() {
         return tags;
     }
 
-    public void setTags(TagToRecipe[] tags) {
+    public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
 
-    public void setIngredients(IngredientToRecipe[] ingredients) {
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public Direction[] getDirections() {
+    public List<Direction> getDirections() {
         return directions;
     }
 
-    public void setDirections(Direction[] directions) {
+    public void setDirections(List<Direction> directions) {
         this.directions = directions;
     }
 }
