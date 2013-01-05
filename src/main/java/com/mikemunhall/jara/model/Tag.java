@@ -2,27 +2,14 @@ package com.mikemunhall.jara.model;
 
 public class Tag {
 
-    private String id;
-    private String recipeId;
-    private String description;
-    private int index;
+    private String description = "";
+    private int index = 0;
 
-    public Tag() { }
+    public Tag() {}
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getRecipeId() {
-        return recipeId;
-    }
-
-    public void setRecipeId(String recipeId) {
-        this.recipeId = recipeId;
+    public Tag(String description, int index) {
+        this.description = description;
+        this.index = index;
     }
 
     public String getDescription() {

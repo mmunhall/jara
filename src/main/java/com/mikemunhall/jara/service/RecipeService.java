@@ -13,14 +13,16 @@ public class RecipeService {
     }
 
     public Recipe create(String userId) {
-        return new Recipe();
+        Recipe recipe = new Recipe(userId);
+        recipeDao.save(recipe);
+        return recipe;
     }
 
     public ArrayList<Recipe> getRecipesByUser(String userId) {
         return new ArrayList<Recipe>();
     }
 
-    public Recipe getRecipeById(String recipeId) {
+    /*public Recipe getRecipeById(String recipeId) {
         return new Recipe();
-    }
+    }*/
 }

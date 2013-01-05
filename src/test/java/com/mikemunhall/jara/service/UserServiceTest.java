@@ -11,7 +11,7 @@ public class UserServiceTest {
     private UserDao userDao;
     private UserService userService;
 
-    @BeforeTest
+    @BeforeClass
     public void setUpUserServiceAndDependencies() {
         userDao = mock(UserDao.class);
         userService = new UserService(userDao);
@@ -33,6 +33,7 @@ public class UserServiceTest {
         assert(user instanceof User);
     }
 
+    @Test
     public void getUserByUsername_InvalidUser_ThrowsInvalidUserException() {
         when(userDao.getUserByUsername(anyString())).thenReturn(null);
 

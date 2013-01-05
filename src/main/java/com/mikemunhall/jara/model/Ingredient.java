@@ -2,29 +2,18 @@ package com.mikemunhall.jara.model;
 
 public class Ingredient {
 
-    private String id;
-    private String recipeId;
-    private float quantity;
-    private String unit;
-    private String description;
-    private int index;
+    private float quantity = 1;
+    private String unit = "";
+    private String description = "";
+    private int index = 0;
 
     public Ingredient() { }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getRecipeId() {
-        return recipeId;
-    }
-
-    public void setRecipeId(String recipeId) {
-        this.recipeId = recipeId;
+    public Ingredient(float quantity, String unit, String description, int index) {
+        this.quantity = quantity;
+        this.unit = unit;
+        this.description = description;
+        this.index = index;
     }
 
     public float getQuantity() {

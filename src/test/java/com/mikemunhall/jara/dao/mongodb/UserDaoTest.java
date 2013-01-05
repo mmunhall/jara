@@ -13,9 +13,9 @@ public class UserDaoTest extends AbstractMongoDBTest {
 
     private UserDao dao;
 
-    @BeforeTest
-    public void initUserDataAndDao() {
-        System.out.println(":::1:::");
+    @BeforeClass
+    public void initUserDataAndDao() throws Exception {
+        super.setUpMongo();
         Mongo mongo = getMongo();
         DB db = mongo.getDB("jaraUnitTest");
         DBCollection userCollection = db.getCollection("users");
@@ -44,6 +44,11 @@ public class UserDaoTest extends AbstractMongoDBTest {
         userCollection.insert(bitsyObj);
 
         dao = new UserDao(db, new UserAdapter());
+    }
+
+    @AfterClass
+    public void tearDownMongo() throws Exception {
+        super.tearDownMongo();
     }
 
     @Test

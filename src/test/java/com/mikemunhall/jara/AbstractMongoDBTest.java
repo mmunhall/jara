@@ -15,18 +15,16 @@ public abstract class AbstractMongoDBTest {
     private MongodProcess _mongod;
     private Mongo _mongo;
 
-    @BeforeTest
     protected void setUpMongo() throws Exception {
+        System.out.println("before test");
         MongodStarter runtime = MongodStarter.getDefaultInstance();
         _mongodExe = runtime.prepare(new MongodConfig(Version.Main.V2_0, 12345, Network.localhostIsIPv6()));
         _mongod = _mongodExe.start();
-
         _mongo = new Mongo("localhost", 12345);
     }
 
-    @AfterTest()
     protected void tearDownMongo() throws Exception {
-
+        System.out.println("after test");
         _mongod.stop();
         _mongodExe.cleanup();
     }

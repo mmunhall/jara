@@ -1,5 +1,6 @@
 package com.mikemunhall.jara.model;
 
+import org.joda.time.DateTime;
 import org.joda.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,9 @@ public class Recipe {
     private List<Ingredient> ingredients;
     private List<Direction> directions;
 
-    public Recipe() {
-        this.recipeName = "My Recipe";
+    public Recipe(String userId) {
+        this.setUserId(userId);
+        this.setRecipeName("New Recipe Created " + new DateTime());
         this.description = "";
         this.servings = 4;
         this.totalPrepTime = new Duration(0);
@@ -32,6 +34,10 @@ public class Recipe {
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUserId() {
