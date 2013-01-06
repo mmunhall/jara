@@ -28,4 +28,10 @@ public class RecipeServiceTest {
         assert(recipe instanceof Recipe);
         assertEquals(objId.toString(), recipe.getUserId());
     }
+
+    @Test
+    public void getRecipesByUser_ReturnsArrayListOfRecipesWithSameUser() {
+        fail("Not implemented");
+    }
+
 }

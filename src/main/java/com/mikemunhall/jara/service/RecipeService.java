@@ -19,7 +19,7 @@ public class RecipeService {
     }
 
     public ArrayList<Recipe> getRecipesByUser(String userId) {
-        return new ArrayList<Recipe>();
+        return recipeDao.getRecipesByUser(userId);
     }
 
     /*public Recipe getRecipeById(String recipeId) {

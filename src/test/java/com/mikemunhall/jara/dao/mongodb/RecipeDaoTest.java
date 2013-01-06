@@ -103,4 +103,9 @@ public class RecipeDaoTest extends AbstractMongoDBTest {
         assertEquals("direction one", ((ArrayList) recipeFromDb.get("directions")).get(0));
         assertEquals("direction two", ((ArrayList) recipeFromDb.get("directions")).get(1));
     }
+
+    @Test
+    void getRecipesByUser_ReturnsAllRecipesForGiveUser() {
+        fail("Not implemented");
+    }
 }

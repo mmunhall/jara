@@ -8,10 +8,8 @@ import com.mikemunhall.jara.model.Recipe;
 import com.mikemunhall.jara.model.Tag;
 import com.mongodb.*;
 import org.bson.types.ObjectId;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 public class RecipeDao implements IRecipeDao {
 
@@ -19,7 +17,7 @@ public class RecipeDao implements IRecipeDao {
     private DBCollection recipeCollection;
 
     public RecipeDao(DB db, IRecipeAdapter recipeAdapter) {
-        this.recipeAdapter = recipeAdapter;
+        recipeAdapter = recipeAdapter;
         recipeCollection = db.getCollection("recipes");
     }
 
@@ -49,6 +47,23 @@ public class RecipeDao implements IRecipeDao {
         recipe.setId(recipeObj.get("_id").toString());
 
         return recipe;
+    }
+
+    public ArrayList<Recipe> getRecipesByUser(String userId) {
+        DBObject query = new BasicDBObject();
+        query.put("userId", new ObjectId(userId));
+
+        DBCursor cursor = recipeCollection.find(query);
+
+        ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+        Iterator<DBObject> it = cursor.iterator();
+        while (it.hasNext()) {
+            DBObject obj = it.next();
+            Recipe r = recipeAdapter.adapt(obj);
+            recipes.add(r);
+        }
+
+        return recipes;
     }
 
     private List<String> tagsAsStringArray(Recipe recipe) {
