@@ -10,4 +10,8 @@ public class ServiceFactory {
     public static UserService getUserService() {
         return (UserService) appContext.getBean("userService");
     }
+
+    public static RecipeService getRecipeService() {
+        return (RecipeService) appContext.getBean("recipeService");
+    }
 }
